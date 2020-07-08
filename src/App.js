@@ -12,6 +12,7 @@ function App() {
           <Route exact path="/about" component={() => <div>About</div>}/>
           <Route exact path="/users" component={() => <div>Users</div>}/>
           <Route exact path="/users:login" component={() => <div>Detail Users</div>}/>
+          <Route component={() => <div>Not Found</div>}/>
           </Switch>
         </Router>
       </AlertState>
