@@ -8,6 +8,7 @@ import Header from './components/ui/Header'
 import Alert from './components/ui/Alert'
 import GitFinder from './components/pages/GitFinder'
 import Container from '@material-ui/core/Container';
+import User from "./components/users/User"
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/" component={() => <div>Home</div>} />
             <Route exact path="/about" component={() => <div>About</div>} />
             <Route exact path="/users" component={GitFinder}/>
+            <Route exact path="/user/:login" component={User}/>
             <Route
               exact
               path="/users:login"
