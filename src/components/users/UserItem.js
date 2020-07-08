@@ -36,7 +36,7 @@ const UserItem = (props) => {
       <CardActions className={classes.action}>
         <Button
           component={Link}
-          to={`/user/${login}`}
+          to={`/users/${login}`}
           variant="outlined"
           color="primary"
           className={classes.buttonDetail}

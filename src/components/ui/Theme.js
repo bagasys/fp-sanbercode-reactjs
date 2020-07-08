@@ -13,7 +13,7 @@ export default createMuiTheme({
       main: `${color1}`
     },
     secondary: {
-      main: `${color3}`
+      main: `${color2}`
     }
   },
 })
