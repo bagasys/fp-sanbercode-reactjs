@@ -1,10 +1,13 @@
 import React from 'react';
-
+import GithubState from './context/github/GithubState'
+import AlertState from './context/alert/AlertState'
 function App() {
   return (
-    <div className="App">
-      hi
-    </div>
+    <GithubState>
+      <AlertState>
+        hi
+      </AlertState>
+    </GithubState>
   );
 }
 
