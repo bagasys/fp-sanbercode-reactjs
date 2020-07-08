@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     textAlign: "center",
   },
   avatarImage: {
-    maxWidth: "50%",
+    width: "50%",
     borderRadius: "50%",
   },
   buttonDetail: {

@@ -12,7 +12,6 @@ const CustomAlert = () => {
     )
   )
 }
-
 const styles = {
   margin: '1em 0'
 }
