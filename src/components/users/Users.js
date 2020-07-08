@@ -1,36 +1,30 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import UserItem from './UserItem'
-import Search from './Search'
-import Grid from '@material-ui/core/Grid';
-
-const useStyles = makeStyles((theme) => ({
-
-}));
+import React, {useContext } from "react";
+import UserItem from "./UserItem";
+import Grid from "@material-ui/core/Grid";
+import GithubContext from "../../context/github/githubContext";
 
 const Users = () => {
-  const classes = useStyles();
-  return (
-    <Container maxWidth="m">
-      <Search/>
+  const githubContext = useContext(GithubContext);
+  if (githubContext.loading) {
+    return <div>loading...</div>;
+  } else {
+    return (
       <Grid container spacing={3}>
         <Grid item xs={3}>
-          <UserItem/>
+          <UserItem />
         </Grid>
         <Grid item xs={3}>
-          <UserItem/>
+          <UserItem />
         </Grid>
         <Grid item xs={3}>
-          <UserItem/>
+          <UserItem />
         </Grid>
         <Grid item xs={3}>
-          <UserItem/>
+          <UserItem />
         </Grid>
       </Grid>
-      
-    </Container>
-  )
-}
+    );
+  }
+};
 
-export default Users
+export default Users;
