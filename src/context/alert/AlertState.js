@@ -6,14 +6,19 @@ import {
 } from '../types'
 
 const AlertState = (props) => {
-  const initialState = {msg: '', type: ''}
+  const initialState = {msg: '', title: '', severity: ''}
   const [state, dispatch] = useReducer(AlertReducer, initialState)
 
-  //TODO: setAlert
+  const setAlert = (msg, severity, title='alert') => {
+    dispatch({type: SET_ALERT, payload: {msg: msg, severity: severity, title: title}})
+    setTimeout(() => dispatch({type: REMOVE_ALERT}), 5000)
+  }
+
   return (
     <AlertContext.Provider
       value={{
         alert: state,
+        setAlert
       }}
     >
       {props.children}

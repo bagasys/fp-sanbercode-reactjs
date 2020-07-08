@@ -5,8 +5,9 @@ import GithubState from "./context/github/GithubState";
 import AlertState from "./context/alert/AlertState";
 import theme from "./components/ui/Theme";
 import Header from './components/ui/Header'
-import Users from './components/users/Users'
+import Alert from './components/ui/Alert'
 import GitFinder from './components/pages/GitFinder'
+import Container from '@material-ui/core/Container';
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -14,6 +15,9 @@ function App() {
       <AlertState>
         <Router>
           <Header/>
+          <Container>
+            <Alert/>
+          </Container>
           <Switch>
             <Route exact path="/" component={() => <div>Home</div>} />
             <Route exact path="/about" component={() => <div>About</div>} />

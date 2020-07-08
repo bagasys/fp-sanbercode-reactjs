@@ -7,6 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import GithubContext from "../../context/github/githubContext";
+import AlertContext from "../../context/alert/alertContext";
 
 const useStyles = makeStyles((theme) => ({
   clearButton: {
@@ -18,7 +19,10 @@ const useStyles = makeStyles((theme) => ({
 const Search = () => {
   const classes = useStyles();
   const githubContext = useContext(GithubContext);
+  const alertContext = useContext(AlertContext);
   const {users, searchUsers} = githubContext;
+  const {setAlert} = alertContext;
+  
   const [text, setText] = useState("");
   const handleChange = (e) => {
     setText(e.target.value);
@@ -26,7 +30,7 @@ const Search = () => {
 
   const onSearch = (e) => {
     if (text === "") {
-      alert("isi bro");
+      setAlert('Please enter something', 'warning', 'Alert')
     } else {
       searchUsers(text);
       setText("");
