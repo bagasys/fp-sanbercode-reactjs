@@ -10,18 +10,11 @@ const Users = () => {
   } else {
     return (
       <Grid container spacing={3}>
-        <Grid item xs={3}>
-          <UserItem />
-        </Grid>
-        <Grid item xs={3}>
-          <UserItem />
-        </Grid>
-        <Grid item xs={3}>
-          <UserItem />
-        </Grid>
-        <Grid item xs={3}>
-          <UserItem />
-        </Grid>
+        {githubContext.users.map(user =>(
+          <Grid item xs={3} key={user.id}>
+            <UserItem user={user} />
+          </Grid>
+        ))}
       </Grid>
     );
   }

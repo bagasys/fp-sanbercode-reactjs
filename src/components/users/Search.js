@@ -18,10 +18,25 @@ const useStyles = makeStyles((theme) => ({
 const Search = () => {
   const classes = useStyles();
   const githubContext = useContext(GithubContext);
+  const {users, searchUsers} = githubContext;
   const [text, setText] = useState("");
   const handleChange = (e) => {
     setText(e.target.value);
   };
+
+  const onSearch = (e) => {
+    if (text === "") {
+      alert("isi bro");
+    } else {
+      searchUsers(text);
+      setText("");
+    }
+  };
+
+  const onClear = (e) => {
+    githubContext.clearUsers();
+  };
+
   return (
     <Fragment>
       <FormControl fullWidth variant="outlined">
@@ -40,20 +55,16 @@ const Search = () => {
         />
       </FormControl>
       <Button
-        onClick={() => {
-          console.log("clicked");
-        }}
+        onClick={onSearch}
         className={classes.clearButton}
         variant="contained"
         color="primary"
       >
         Search
       </Button>
-      {githubContext.users.length > 0 && (
+      {users.length > 0 && (
         <Button
-          onClick={() => {
-            console.log("clicked");
-          }}
+          onClick={onClear}
           className={classes.clearButton}
           variant="outlined"
           color="secondary"
