@@ -98,6 +98,9 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     zIndex: theme.zIndex.modal + 1,
   },
+  logoText: {
+    color: "white"
+  }
 }));
 
 export default function Header(props) {
@@ -214,7 +217,8 @@ export default function Header(props) {
               component={Link}
               to="/"
             >
-              LOGO
+              <div className={classes.logoText}>LOGO</div>
+              
             </Button>
             {matches ? drawer : tabs}
           </Toolbar>
