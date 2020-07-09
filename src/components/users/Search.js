@@ -14,15 +14,18 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     margin: "0.5em 0",
   },
+  box: {
+    height: "100vh",
+  },
 }));
 
 const Search = () => {
   const classes = useStyles();
   const githubContext = useContext(GithubContext);
   const alertContext = useContext(AlertContext);
-  const {users, searchUsers} = githubContext;
-  const {setAlert} = alertContext;
-  
+  const { users, searchUsers } = githubContext;
+  const { setAlert } = alertContext;
+
   const [text, setText] = useState("");
   const handleChange = (e) => {
     setText(e.target.value);
@@ -30,7 +33,7 @@ const Search = () => {
 
   const onSearch = (e) => {
     if (text === "") {
-      setAlert('Please enter something', 'warning', 'Alert')
+      setAlert("Please enter something", "warning", "Alert");
     } else {
       searchUsers(text);
       setText("");
@@ -76,6 +79,7 @@ const Search = () => {
           Clear
         </Button>
       )}
+      <div className={classes.box}></div>
     </Fragment>
   );
 };

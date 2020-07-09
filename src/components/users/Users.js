@@ -5,7 +5,7 @@ import GithubContext from "../../context/github/githubContext";
 import LinearProgress from "@material-ui/core/LinearProgress";
 const Users = () => {
   const githubContext = useContext(GithubContext);
-  
+
   if (githubContext.loading) {
     return <LinearProgress color="primary" />;
   } else {
@@ -13,7 +13,7 @@ const Users = () => {
       <Grid container spacing={3}>
         {githubContext.users.map((user) => (
           <Grid item xs={6} sm={3} key={user.id}>
-            <UserItem user={user}/>
+            <UserItem user={user} />
           </Grid>
         ))}
       </Grid>
