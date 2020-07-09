@@ -7,6 +7,7 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import LinearProgress from "@material-ui/core/LinearProgress";
 import GithubContext from "../../context/github/githubContext";
 import Repos from "../repos/Repos"
 import { Link } from "react-router-dom";
@@ -66,8 +67,9 @@ const User = ({ match }) => {
     hireable,
     company,
   } = githubContext.user;
-  if (githubContext.loading) return <div>Loading...</div>;
-
+  if (githubContext.loading) {
+    return <LinearProgress color="primary" />;
+  }
   return (
     <Container>
       <Button component={Link} to="/users" variant="contained">{"< Back to search"}</Button>
