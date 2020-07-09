@@ -79,7 +79,8 @@ const Search = () => {
           Clear
         </Button>
       )}
-      <div className={classes.box}></div>
+      {users < 1 && <div className={classes.box}></div>}
+      
     </Fragment>
   );
 };
