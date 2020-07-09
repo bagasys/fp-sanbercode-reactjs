@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import Container from "@material-ui/core/Container";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -28,7 +29,7 @@ const Home = () => {
         className={classes.box}
       >
         <h1 className={classes.title}>Search Github</h1>
-        <Button color="primary" variant="outlined">
+        <Button component={Link} to="/users" color="primary" variant="outlined">
           Search
         </Button>
       </Grid>
