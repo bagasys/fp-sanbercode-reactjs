@@ -16,4 +16,12 @@ export default createMuiTheme({
       main: `${color2}`
     }
   },
+  typography: {
+    tab: {
+      fontFamily: "Roboto",
+      textTransform: 'none',
+      fontWeight: "700",
+      fontSize: "1rem",
+    },
+  }
 })
