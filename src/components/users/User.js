@@ -46,11 +46,15 @@ const useStyles = makeStyles({
 
 const User = ({ match }) => {
   const githubContext = useContext(GithubContext);
+  
+  //life cycle method untuk fetch data user dan repos
   useEffect(() => {
     githubContext.getUser(match.params.login);
     githubContext.getUserRepos(match.params.login);
     // eslint-disable-next-line
   }, []);
+  
+  
   const classes = useStyles();
   const {
     name,

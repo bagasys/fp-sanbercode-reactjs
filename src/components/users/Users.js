@@ -3,6 +3,9 @@ import UserItem from "./UserItem";
 import Grid from "@material-ui/core/Grid";
 import GithubContext from "../../context/github/githubContext";
 import LinearProgress from "@material-ui/core/LinearProgress";
+
+//list state users dari contextAPI
+
 const Users = () => {
   const githubContext = useContext(GithubContext);
 

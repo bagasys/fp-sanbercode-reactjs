@@ -15,6 +15,8 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
+
+//efect elevate saat appbar di scroll
 function ElevationScroll(props) {
   const { children } = props;
   const trigger = useScrollTrigger({
@@ -27,6 +29,7 @@ function ElevationScroll(props) {
   });
 }
 
+//styling
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
@@ -104,12 +107,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header(props) {
-  const { value, setValue, selectedIndex, setSelectedIndex } = props;
+  //lifting state up, halaman aktif dari sidebar(mobile), appbar, footer.
+  const { value, setValue, selectedIndex, setSelectedIndex } = props; 
   const classes = useStyles();
   const theme = useTheme();
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   const matches = useMediaQuery(theme.breakpoints.down("md"));
 
+  //state untuk sidebar pada mobile
   const [openDrawer, setOpenDrawer] = useState(false);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -132,6 +137,8 @@ export default function Header(props) {
     });
   }, [routes, selectedIndex, value]);
 
+
+  //extracting Tabs (tombol2 pada navbar)
   const tabs = (
     <React.Fragment>
       <Tabs
@@ -153,7 +160,8 @@ export default function Header(props) {
       </Tabs>
     </React.Fragment>
   );
-
+  
+  //extracting drawer (sidebar)
   const drawer = (
     <React.Fragment>
       <SwipeableDrawer
@@ -204,6 +212,7 @@ export default function Header(props) {
   );
 
   return (
+    //Penuh dengan composing
     <Fragment>
       <ElevationScroll>
         <AppBar position="fixed" color="primary" className={classes.appbar}>

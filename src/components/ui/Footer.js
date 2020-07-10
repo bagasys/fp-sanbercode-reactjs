@@ -7,6 +7,7 @@ import facebook from "../../assets/facebook.svg";
 import twitter from "../../assets/twitter.svg";
 import instagram from "../../assets/instagram.svg";
 
+//custom styling
 const useStyles = makeStyles((theme) => ({
   footer: {
     height: "10em",
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = (props) => {
   const classes = useStyles();
+  //lifting stateup untuk sinkronisasi dengan header
   const { setValue, setSelectedIndex } = props;
 
   return (
