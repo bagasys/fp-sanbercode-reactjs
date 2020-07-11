@@ -1,3 +1,11 @@
+This project is for final project assignment in sanbercode.com reactjs frontend web development:
+-lifting state up, hooks, function component, extract, composing, can be found in Footer.js, Header.js, App.js
+-lifecycle can be found in User
+-stateManagement using contextAPI can be found on many file like Search.js Users.js, User.js
+-Controlled form can be found in Search.js
+-Class Component can be found in Repos.js and the rest of the project are functional components.
+-There are 4 routing: home, search, user' detail and about
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
